@@ -12,7 +12,7 @@
  */
 
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello Anthony!');
-	},
+  async fetch(request, env, ctx): Promise<Response> {
+    return new Response("<h1>Hello Anthony!</h1>");
+  },
 } satisfies ExportedHandler<Env>;

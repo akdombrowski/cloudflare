@@ -2,19 +2,36 @@
   "name": "cloudflare",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
+    "dev:vite": "vite --port 3000 serve src/app",
     "start": "wrangler dev",
     "test": "vitest",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.5.0",
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
     "@cloudflare/workers-types": "^4.20240909.0",
-    "typescript": "^5.5.2",
-    "vitest": "1.6.0",
-    "wrangler": "^3.60.3"
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.5",
+    "vitest": "2.0",
+    "wrangler": "^3.78.2"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.0",
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.0",
+    "@mui/material": "^6.1.0",
+    "@vitest/runner": "2.0",
+    "@vitest/snapshot": "2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
 }

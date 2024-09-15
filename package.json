@@ -19,7 +19,7 @@
     "prettier": "^3.3.3",
     "typescript": "^5.6.2",
     "vite": "^5.4.5",
-    "vitest": "2.0",
+    "vitest": "2.1",
     "wrangler": "^3.78.2"
   },
   "packageManager": "yarn@4.5.0",
@@ -29,8 +29,8 @@
     "@fontsource/roboto": "^5.1.0",
     "@mui/icons-material": "^6.1.0",
     "@mui/material": "^6.1.0",
-    "@vitest/runner": "2.0",
-    "@vitest/snapshot": "2.0",
+    "@vitest/runner": "2.1",
+    "@vitest/snapshot": "2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }

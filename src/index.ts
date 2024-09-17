@@ -14,18 +14,16 @@
 import { getAll } from "./vids/videoFuns";
 import type { Request, Context, Environment } from "@cloudflare/workers-types";
 
-const getVids = (req, env, ctx) => {
+const searchParamsFromGET = (req, env, ctx) => {
   const url = new URL(req.url);
   const queryParams = url.searchParams;
+  const keyword = queryParams.getAll("keyword");
+  return keyword;
+};
+
+const searchVids = (keyword: string) => {
   let results = [];
-  if (queryParams?.size) {
-    for (const [key, value] of queryParams) {
-      const searchRes = getAll(value);
-      if (searchRes?.length) {
-        results.concat(searchRes);
-      }
-    }
-  }
+  const searchRes = getAll(keyword);
   return results;
 };
 
@@ -36,6 +34,7 @@ export default {
 
     switch (methodLowerCase) {
       case "get":
+        const searchParams = searchParamsFromGET(request, env, ctx);
         break;
       case "post":
         break;

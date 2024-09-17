@@ -46,7 +46,7 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
           ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6"],\
           ["vitest", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:2.1.1"],\
-          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.3"]\
+          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1950,7 +1950,7 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
           ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6"],\
           ["vitest", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:2.1.1"],\
-          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.3"]\
+          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2788,6 +2788,25 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["miniflare", [\
+      ["npm:3.20240909.1", {\
+        "packageLocation": "../../.yarn/berry/cache/miniflare-npm-3.20240909.1-ec90d9e03a-10c0.zip/node_modules/miniflare/",\
+        "packageDependencies": [\
+          ["miniflare", "npm:3.20240909.1"],\
+          ["@cspotcode/source-map-support", "npm:0.8.1"],\
+          ["acorn", "npm:8.12.1"],\
+          ["acorn-walk", "npm:8.3.4"],\
+          ["capnp-ts", "npm:0.7.0"],\
+          ["exit-hook", "npm:2.2.1"],\
+          ["glob-to-regexp", "npm:0.4.1"],\
+          ["stoppable", "npm:1.1.0"],\
+          ["undici", "npm:5.28.4"],\
+          ["workerd", "npm:1.20240909.0"],\
+          ["ws", "virtual:aaeda0720de7e3d6d1bbb0b27f1cecf77f43fa1e3fe07c3f9c73fb433829c7438bc81c97493b8c9e417d2b230c50a9aa6bc4433bdc34676f723eb29754fb9744#npm:8.18.0"],\
+          ["youch", "npm:3.3.3"],\
+          ["zod", "npm:3.23.8"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:3.20240909.2", {\
         "packageLocation": "../../.yarn/berry/cache/miniflare-npm-3.20240909.2-aaeda0720d-10c0.zip/node_modules/miniflare/",\
         "packageDependencies": [\
@@ -4043,6 +4062,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["wrangler", [\
+      ["npm:3.78.2", {\
+        "packageLocation": "../../.yarn/berry/cache/wrangler-npm-3.78.2-1c0bd6ff44-10c0.zip/node_modules/wrangler/",\
+        "packageDependencies": [\
+          ["wrangler", "npm:3.78.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["npm:3.78.3", {\
         "packageLocation": "../../.yarn/berry/cache/wrangler-npm-3.78.3-cddf7082a5-10c0.zip/node_modules/wrangler/",\
         "packageDependencies": [\
@@ -4085,10 +4111,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.3", {\
-        "packageLocation": "./.yarn/__virtual__/wrangler-virtual-e9e127845d/3/.yarn/berry/cache/wrangler-npm-3.78.3-cddf7082a5-10c0.zip/node_modules/wrangler/",\
+      ["virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2", {\
+        "packageLocation": "./.yarn/__virtual__/wrangler-virtual-33a8073935/3/.yarn/berry/cache/wrangler-npm-3.78.2-1c0bd6ff44-10c0.zip/node_modules/wrangler/",\
         "packageDependencies": [\
-          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.3"],\
+          ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"],\
           ["@cloudflare/kv-asset-handler", "npm:0.3.4"],\
           ["@cloudflare/workers-shared", "npm:0.5.3"],\
           ["@cloudflare/workers-types", "npm:4.20240909.0"],\
@@ -4100,7 +4126,7 @@ const RAW_RUNTIME_STATE =
           ["date-fns", "npm:3.6.0"],\
           ["esbuild", "npm:0.17.19"],\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
-          ["miniflare", "npm:3.20240909.2"],\
+          ["miniflare", "npm:3.20240909.1"],\
           ["nanoid", "npm:3.3.7"],\
           ["path-to-regexp", "npm:6.3.0"],\
           ["resolve", "patch:resolve@npm%3A1.22.8#optional!builtin<compat/resolve>::version=1.22.8&hash=c3c19d"],\

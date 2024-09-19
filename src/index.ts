@@ -1,3 +1,4 @@
+import { VideoURLObj } from "./vids/videoURLs";
 import { getAll } from "@/vids/videoFuns";
 import type { Request, Context, Environment } from "@cloudflare/workers-types";
 
@@ -7,23 +8,29 @@ const searchFromGET = (req, env, ctx): VideoURLObj[] | null => {
   const keyword = queryParams.getAll("keyword");
 
   if (keyword) {
-    return getAll(keyword);
+    return getAll(keyword.join(" "));
   }
 
   return null;
 };
+
+interface IBody {
+  [key: string]: string;
+}
+
+type IBodyInit = IBody & BodyInit;
 
 export default {
   async fetch(request: Request, env: Environment, ctx: Context): Promise<Response> {
     const { body, method } = request;
     const methodLowerCase = method.toLowerCase();
     let res = new FormData();
-    let r = {};
+    let r: IBodyInit = {};
 
     switch (methodLowerCase) {
       case "get":
         const searchResults = searchFromGET(request, env, ctx);
-        searchResults?.forEach((result) => {
+        searchResults?.forEach((result: VideoURLObj) => {
           res.append(result.title, result.url);
           r[result.title] = result.url;
         });
@@ -35,8 +42,8 @@ export default {
     }
 
     const options = {
-      encodeBody: "manual",
-      headers: new Headers({ "Content-Type":  "text/plain" }),
+      encodeBody: encodeBody["manual"],
+      headers: new Headers({ "Content-Type": "text/plain" }),
     };
 
     // FormData

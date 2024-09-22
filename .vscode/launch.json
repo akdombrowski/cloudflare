@@ -5,7 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch via Yarn",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/src/ai/speech2Text.ts",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "yarn dev",
       "request": "launch",
       "runtimeArgs": [
         "dev",
@@ -20,7 +30,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "node index.ts",
       "skipFiles": [
         "<node_internals>/**"
       ],

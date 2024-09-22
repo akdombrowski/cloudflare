@@ -7,23 +7,9 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "dev:vite": "vite --port 3000 serve src/app",
     "start": "wrangler dev",
     "test": "vitest",
     "cf-typegen": "wrangler types"
-  },
-  "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.5.3",
-    "@cloudflare/workers-types": "^4.20240909.0",
-    "@types/lodash": "^4",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "prettier": "^3.3.3",
-    "prettier-eslint": "^16.3.0",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.6",
-    "vitest": "2.1",
-    "wrangler": "3.78.2"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -36,5 +22,18 @@
     "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.3",
+    "@cloudflare/workers-types": "^4.20240919.0",
+    "@types/lodash": "^4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "prettier": "^3.3.3",
+    "prettier-eslint": "^16.3.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.6",
+    "vitest": "2.1",
+    "wrangler": "3.78.2"
   }
 }

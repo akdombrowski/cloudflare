@@ -1,4 +1,4 @@
-import VIDEOS_TITLE_URL, { type VideoURLObj } from "./videoURLs";
+import VIDEOS_TITLE_URL, { type VideoURLObj } from "./vids/videoURLs";
 import _ from "lodash";
 
 export const getFirst = (title: string): VideoURLObj | null => {

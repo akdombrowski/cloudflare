@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
 const CF_API_KEY = process.env.CF_API_KEY;
 const model_name = "whisper-tiny-en";
 const url = `https://api.cloudflare.com/client/v4/accounts/${process.env.ACCOUNT_ID}/ai/run/${model_name}`;

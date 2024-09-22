@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@cloudflare/vitest-pool-workers", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:0.5.3"],\
-          ["@cloudflare/workers-types", "npm:4.20240909.0"],\
+          ["@cloudflare/workers-types", "npm:4.20240919.0"],\
           ["@emotion/react", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:11.13.3"],\
           ["@emotion/styled", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:11.13.0"],\
           ["@fontsource/roboto", "npm:5.1.0"],\
@@ -283,10 +283,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@cloudflare/workers-types", [\
-      ["npm:4.20240909.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@cloudflare-workers-types-npm-4.20240909.0-51c18f714b-10c0.zip/node_modules/@cloudflare/workers-types/",\
+      ["npm:4.20240919.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@cloudflare-workers-types-npm-4.20240919.0-7651e8a4c7-10c0.zip/node_modules/@cloudflare/workers-types/",\
         "packageDependencies": [\
-          ["@cloudflare/workers-types", "npm:4.20240909.0"]\
+          ["@cloudflare/workers-types", "npm:4.20240919.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2277,7 +2277,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["cloudflare", "workspace:."],\
           ["@cloudflare/vitest-pool-workers", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:0.5.3"],\
-          ["@cloudflare/workers-types", "npm:4.20240909.0"],\
+          ["@cloudflare/workers-types", "npm:4.20240919.0"],\
           ["@emotion/react", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:11.13.3"],\
           ["@emotion/styled", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:11.13.0"],\
           ["@fontsource/roboto", "npm:5.1.0"],\
@@ -5305,7 +5305,7 @@ const RAW_RUNTIME_STATE =
           ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"],\
           ["@cloudflare/kv-asset-handler", "npm:0.3.4"],\
           ["@cloudflare/workers-shared", "npm:0.5.3"],\
-          ["@cloudflare/workers-types", "npm:4.20240909.0"],\
+          ["@cloudflare/workers-types", "npm:4.20240919.0"],\
           ["@esbuild-plugins/node-globals-polyfill", "virtual:2e63eca2ee9671b3ac11835e9f856a30b9d8b71e523e1e4d26b41487485344e9794fe06fb850a70ccc8125e7c021fe184687bd0a90af0cd49f094583f13ebda5#npm:0.2.3"],\
           ["@esbuild-plugins/node-modules-polyfill", "virtual:2e63eca2ee9671b3ac11835e9f856a30b9d8b71e523e1e4d26b41487485344e9794fe06fb850a70ccc8125e7c021fe184687bd0a90af0cd49f094583f13ebda5#npm:0.2.2"],\
           ["@types/cloudflare__workers-types", null],\

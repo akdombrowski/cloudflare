@@ -1,9 +1,12 @@
-import { VideoURLObj } from "./vids/videoURLs";
+import { VideoURLObj } from "@/vids/videoURLs";
 import { getAll } from "@/vids/videoFuns";
-import type { Request, Context, Environment } from "@cloudflare/workers-types";
+import type {
+  Request as WorkerRequest,
+  ExecutionContext,
+} from "@cloudflare/workers-types";
 
-const searchFromGET = (req, env, ctx): VideoURLObj[] | null => {
-  const url = new URL(req.url);
+const searchFromGET = (request: WorkerRequest, env: unknown, ctx: ExecutionContext): VideoURLObj[] | null => {
+  const url = new URL(request.url);
   const queryParams = url.searchParams;
   const keyword = queryParams.getAll("keyword");
 
@@ -21,7 +24,7 @@ interface IBody {
 type IBodyInit = IBody & BodyInit;
 
 export default {
-  async fetch(request: Request, env: Environment, ctx: Context): Promise<Response> {
+  async fetch(request: WorkerRequest, env: unknown, ctx: ExecutionContext): Promise<Response> {
     const { body, method } = request;
     const methodLowerCase = method.toLowerCase();
     let res = new FormData();

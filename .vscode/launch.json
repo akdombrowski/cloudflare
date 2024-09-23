@@ -5,16 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/src/ai/speech2Text.ts",
-      "request": "launch",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "type": "node",
-      "console": "integratedTerminal"
-    },
-    {
       "name": "yarn dev",
       "request": "launch",
       "runtimeArgs": [
@@ -25,7 +15,19 @@
         "<node_internals>/**"
       ],
       "type": "node",
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "serverReadyAction":{
+        "action": "debugWithChrome",
+        "pattern": "Ready on (http://localhost:8787)",
+        "uriFormat": "%s?keyword=oauth",
+        "webRoot": "${workspaceFolder}/src",
+        "killOnServerStop": false
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "",
+        "order": 1
+      }
     },
     {
       "type": "node",
@@ -37,7 +39,12 @@
       "program": "${workspaceFolder}/src/index.ts",
       "outFiles": [
         "${workspaceFolder}/**/*.js"
-      ]
+      ],
+      "presentation": {
+        "hidden": false,
+        "group": "",
+        "order": 2
+      }
     }
   ]
 }

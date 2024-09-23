@@ -54,7 +54,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:18.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
           ["typescript-eslint", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:8.6.0"],\
-          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6"],\
+          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.7"],\
           ["vitest", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:2.1.1"],\
           ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"]\
         ],\
@@ -2673,7 +2673,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:18.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
           ["typescript-eslint", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:8.6.0"],\
-          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6"],\
+          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.7"],\
           ["vitest", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:2.1.1"],\
           ["wrangler", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:3.78.2"]\
         ],\
@@ -5688,10 +5688,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["npm:5.4.6", {\
-        "packageLocation": "../../.yarn/berry/cache/vite-npm-5.4.6-129b7665fc-10c0.zip/node_modules/vite/",\
+      ["npm:5.4.7", {\
+        "packageLocation": "../../.yarn/berry/cache/vite-npm-5.4.7-7fb1bc703e-10c0.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "npm:5.4.6"]\
+          ["vite", "npm:5.4.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
@@ -5781,10 +5781,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6", {\
-        "packageLocation": "./.yarn/__virtual__/vite-virtual-c451e4db00/3/.yarn/berry/cache/vite-npm-5.4.6-129b7665fc-10c0.zip/node_modules/vite/",\
+      ["virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.7", {\
+        "packageLocation": "./.yarn/__virtual__/vite-virtual-9838c5cbf7/3/.yarn/berry/cache/vite-npm-5.4.7-7fb1bc703e-10c0.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.6"],\
+          ["vite", "virtual:fe0bb02fafef7a18a6041f3e4c86958914bbd6fadb10ca4701211ceafd3f6b46496ef85598115a9e170bd22fa7f6691808151f959d8f7423c85c702a30387c3f#npm:5.4.7"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
           ["@types/node", "npm:22.5.5"],\

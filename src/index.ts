@@ -4,8 +4,10 @@ import type {
   Request as WorkerRequest,
   ExecutionContext,
   ResponseInit,
+  BodyInit,
 } from "@cloudflare/workers-types";
-import type { ReducerStateWithoutAction } from "react";
+import { Buffer } from "node:buffer";
+import { Readable } from "node:stream";
 
 const searchFromGET = (
   request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
@@ -43,14 +45,7 @@ export default {
       case "get":
         const searchResults = searchFromGET(request, env, ctx);
         searchResults?.forEach((result: VideoURLObj) => {
-          console.log(result);
           res.append(result.title, result.url);
-        });
-        console.log("\n\nsearch results\n");
-        res.forEach(function callback(val: File | string, key: string, parent: FormData) {
-          console.log(key);
-          console.log(val);
-          console.log();
         });
         break;
       case "post":
@@ -60,8 +55,8 @@ export default {
     }
 
     const options: ResponseInit = {
-      encodeBody: "manual",
-      headers: new Headers({ "Content-Type": "text/plain" }),
+      // encodeBody: "manual",
+      headers: new Headers({ "Content-Type": "application/octet-stream" }),
     };
 
     const resData: string[] = [];
@@ -69,14 +64,22 @@ export default {
       resData.push(`${key}: ${value}`);
     });
 
-    console.log("\n", resData.join("\n\n"), "\n");
+    const buf: Buffer = Buffer.from(resData.join(", "));
+    const uint16array = new Uint16Array(
+      buf.buffer,
+      buf.byteOffset,
+      buf.length / Uint16Array.BYTES_PER_ELEMENT,
+    );
+
+    const readable = Readable.from(res.entries()) as unknown as ReadableStream;
+
 
     // FormData
-    const response = new Response(resData.join("\n\n"), options);
+    const response = new Response(readable, options);
 
     // Object {title: url}
     options.headers = new Headers({ "Content-Type": "application/json" });
-    const response2 = new Response(res, options);
+    const response2 = new Response(uint16array, options);
 
     // above object stringified
     options.headers = new Headers({ "Content-Type": "text/plain" });
@@ -87,6 +90,11 @@ export default {
     options.headers = new Headers({ "Content-Type": "text/html" });
     // const html = `<pre>${rStr}</pre>`;
     // const response4 = new Response(html, options);
+
+    // console.log("\n", resData.join("\n\n"), "\n");
+
+    // const resSt = encodeURIComponent(resData.join("\n\n"));
+    // const response5 = new Response(resSt, options);
 
     return response;
   },

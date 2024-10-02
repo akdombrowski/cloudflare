@@ -12,20 +12,33 @@
       ],
       "runtimeExecutable": "yarn",
       "skipFiles": [
-        "<node_internals>/**"
+        "<node_internals>/**/*",
+        "${workspaceFolder}/node_modules/**/*",
+        "${workspaceFolder}/.yarn/**",
+        "!${workspaceFolder}/.yarn/unplugged/@cloudflare-*/**",
+        "${workspaceFolder}/.vscode/**",
+        // "${workspaceFolder}/.wrangler/**",
+
+      ],
+      "autoAttachChildProcesses": true,
+      "envFile": "${workspaceFolder}/.env.development.local",
+      "outFiles": [
+        "${workspaceFolder}/.wrangler/**/*.(m|c|)js",
+        "!**/node_modules/**"
       ],
       "type": "node",
+
       "console": "integratedTerminal",
-      "serverReadyAction":{
+      "serverReadyAction": {
         "action": "debugWithChrome",
-        "pattern": "Ready on (http://localhost:8787)",
+        "pattern": "Ready on (http://localhost:[0-9]+)",
         "uriFormat": "%s?keyword=oauth",
         "webRoot": "${workspaceFolder}/src",
-        "killOnServerStop": false
+        "killOnServerStop": true
       },
       "presentation": {
         "hidden": false,
-        "group": "",
+        "group": "fullstack",
         "order": 1
       }
     },
@@ -42,8 +55,8 @@
       ],
       "presentation": {
         "hidden": false,
-        "group": "",
-        "order": 2
+        "group": "backend",
+        "order": 1
       }
     }
   ]

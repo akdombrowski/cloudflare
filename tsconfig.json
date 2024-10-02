@@ -22,7 +22,8 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "src/d/",
-    "allowImportingTsExtensions": true
+    "sourceMap": true,
+    // "inlineSourceMap": true,
   },
   "exclude": [
     "test",

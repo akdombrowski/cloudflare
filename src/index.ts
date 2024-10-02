@@ -1,4 +1,4 @@
-import { getAll } from "@/vids/videoFuns.ts";
+import { getAll, getFirst } from "@/vids/videoFuns.js";
 import type { VideoURLObj } from "@/vids/videoURLs.ts";
 import type {
   Request as WorkerRequest,
@@ -9,17 +9,25 @@ import type {
 import { Buffer } from "node:buffer";
 import { Readable } from "node:stream";
 
-const searchFromGET = (
+const searchFromGET = async (
   request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
   env: Env,
   ctx: ExecutionContext,
-): VideoURLObj[] | null => {
+): Promise<VideoURLObj[] | null> => {
   const url = new URL(request.url);
   const queryParams = url.searchParams;
   const keyword = queryParams.getAll("keyword");
-
-  if (keyword) {
+  console.log("keyword:", keyword);
+  if (keyword?.length > 0) {
     return getAll(keyword.join(" "));
+  }
+
+  const video: VideoURLObj[] = [];
+  const oauth = getFirst("oauth");
+
+  if (oauth) {
+    video.push(oauth);
+    return video;
   }
 
   return null;
@@ -38,63 +46,46 @@ export default {
     ctx: ExecutionContext,
   ): Promise<Response> {
     const { body, method } = request;
+    const url = new URL(request.url);
+
+    if (!url.pathname.endsWith("/")) {
+      console.log("\nurl path:", url.pathname);
+      console.log("not for me. returning early.");
+      return new Response();
+    }
     const methodLowerCase = method.toLowerCase();
+
     let res = new FormData();
+    const resObj: { [key: string]: string } = {};
+    let str;
+    const arr: string[] | globalThis.BodyInit | null | undefined = [];
+
+    let searchResults: VideoURLObj[] = [];
 
     switch (methodLowerCase) {
       case "get":
-        const searchResults = searchFromGET(request, env, ctx);
+        searchResults = (await searchFromGET(request, env, ctx))!;
         searchResults?.forEach((result: VideoURLObj) => {
           res.append(result.title, result.url);
+          resObj[result.title] = result.url;
+          arr.push(JSON.stringify(result, null, 2));
         });
+        str = JSON.stringify(searchResults);
         break;
       case "post":
         break;
       default:
         break;
     }
-
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
     const options: ResponseInit = {
-      // encodeBody: "manual",
-      headers: new Headers({ "Content-Type": "application/octet-stream" }),
+      headers: headers,
+      status: 200,
+      statusText: "Ok. I think?",
     };
 
-    const resData: string[] = [];
-    res.forEach((value: File | string, key: string): void => {
-      resData.push(`${key}: ${value}`);
-    });
-
-    const buf: Buffer = Buffer.from(resData.join(", "));
-    const uint16array = new Uint16Array(
-      buf.buffer,
-      buf.byteOffset,
-      buf.length / Uint16Array.BYTES_PER_ELEMENT,
-    );
-
-    const readable = Readable.from(res.entries()) as unknown as ReadableStream;
-
-
-    // FormData
-    const response = new Response(readable, options);
-
-    // Object {title: url}
-    options.headers = new Headers({ "Content-Type": "application/json" });
-    const response2 = new Response(uint16array, options);
-
-    // above object stringified
-    options.headers = new Headers({ "Content-Type": "text/plain" });
-    // const rStr = ;
-    // const response3 = new Response(rStr, options);
-
-    // html code
-    options.headers = new Headers({ "Content-Type": "text/html" });
-    // const html = `<pre>${rStr}</pre>`;
-    // const response4 = new Response(html, options);
-
-    // console.log("\n", resData.join("\n\n"), "\n");
-
-    // const resSt = encodeURIComponent(resData.join("\n\n"));
-    // const response5 = new Response(resSt, options);
+    const response = new Response(str, options);
 
     return response;
   },

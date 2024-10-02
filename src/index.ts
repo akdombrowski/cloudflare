@@ -17,7 +17,7 @@ const searchFromGET = async (
   const url = new URL(request.url);
   const queryParams = url.searchParams;
   const keyword = queryParams.getAll("keyword");
-  console.log("keyword:", keyword);
+
   if (keyword?.length > 0) {
     return getAll(keyword.join(" "));
   }
@@ -38,7 +38,15 @@ interface IBody {
 }
 
 type IBodyInit = IBody | BodyInit;
+const checkIfRequestIsForMe = (url: URL) => {
+  if (url.pathname.endsWith("/")) {
+    return true;
+  }
 
+  console.log("\nurl path:", url.pathname);
+  console.log("not for me. returning early.");
+  return false;
+};
 export default {
   async fetch(
     request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
@@ -48,11 +56,13 @@ export default {
     const { body, method } = request;
     const url = new URL(request.url);
 
-    if (!url.pathname.endsWith("/")) {
-      console.log("\nurl path:", url.pathname);
-      console.log("not for me. returning early.");
+    // check if the request needs processing by checking pathname
+    // ex of one that does NOT = '/favicon.ico'
+    // only processes root pathname URLs = '/'
+    if (!checkIfRequestIsForMe(url)) {
       return new Response();
     }
+
     const methodLowerCase = method.toLowerCase();
 
     let res = new FormData();

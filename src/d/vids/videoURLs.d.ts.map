@@ -1,0 +1,1 @@
+{"version":3,"file":"videoURLs.d.ts","sourceRoot":"","sources":["../../vids/videoURLs.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,WAAW;IAC1B,KAAK,EAAE,MAAM,CAAC;IACd,GAAG,EAAE,MAAM,CAAC;IACZ,GAAG,EAAE,MAAM,EAAE,CAAC;CACf;AACD,eAAO,MAAM,iBAAiB,EAAE,WAAW,EAoB1C,CAAC;AAEF,eAAO,MAAM,gBAAgB,EAAE,WAAW,EAgHzC,CAAC;AAEF,eAAe,gBAAgB,CAAC"}

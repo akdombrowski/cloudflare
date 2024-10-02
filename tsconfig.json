@@ -15,19 +15,19 @@
     ],
     "types": [
       "node",
-      "@cloudflare/workers-types/2023-07-01"
+      "@cloudflare/workers-types/2023-07-01",
+      "lodash",
+      "eslint__js",
     ],
     "esModuleInterop": true,
     "noEmit": false,
-    "emitDeclarationOnly": true,
     "declaration": true,
-    "outDir": "src/d/",
+    "declarationMap": true,
+    "declarationDir": "src/d/",
     "sourceMap": true,
-    // "inlineSourceMap": true,
   },
   "exclude": [
     "test",
-    "src/d/**/*"
   ],
   "include": [
     "worker-configuration.d.ts",

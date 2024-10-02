@@ -5,9 +5,8 @@ import type {
   ExecutionContext,
   ResponseInit,
   BodyInit,
+  CfProperties,
 } from "@cloudflare/workers-types";
-import { Buffer } from "node:buffer";
-import { Readable } from "node:stream";
 
 const searchFromGET = async (
   request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
@@ -38,6 +37,7 @@ interface IBody {
 }
 
 type IBodyInit = IBody | BodyInit;
+
 const checkIfRequestIsForMe = (url: URL) => {
   if (url.pathname.endsWith("/")) {
     return true;
@@ -47,9 +47,60 @@ const checkIfRequestIsForMe = (url: URL) => {
   console.log("not for me. returning early.");
   return false;
 };
+
+const processGET = async (
+  request: WorkerRequest<CfProperties, IncomingRequestCfProperties<CfProperties>>,
+  env: Env,
+  ctx: ExecutionContext,
+) => {
+  let res = new FormData();
+  const resObj: { [key: string]: string } = {};
+  let str;
+  const arr: string[] | globalThis.BodyInit | null | undefined = [];
+
+  const searchResults: VideoURLObj[] = (await searchFromGET(request, env, ctx))!;
+  searchResults?.forEach((result: VideoURLObj) => {
+    res.append(result.title, result.url);
+    resObj[result.title] = result.url;
+    arr.push(JSON.stringify(result, null, 2));
+  });
+
+  str = JSON.stringify(searchResults);
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  const options: ResponseInit = {
+    headers: headers,
+    status: 200,
+    statusText: "Ok. I think?",
+  };
+
+  const response = new Response(str, options);
+
+  return response;
+};
+
+const processRequest = async (
+  request: WorkerRequest<CfProperties, IncomingRequestCfProperties<CfProperties>>,
+  env: Env,
+  ctx: ExecutionContext,
+): Promise<Response> => {
+  const method = request.method.toLowerCase();
+
+  switch (method) {
+    case "get":
+      return await processGET(request, env, ctx);
+    case "post":
+      break;
+    default:
+      break;
+  }
+
+  return new Response();
+};
+
 export default {
   async fetch(
-    request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
+    request: WorkerRequest<CfProperties, IncomingRequestCfProperties<CfProperties>>,
     env: Env,
     ctx: ExecutionContext,
   ): Promise<Response> {
@@ -63,39 +114,7 @@ export default {
       return new Response();
     }
 
-    const methodLowerCase = method.toLowerCase();
-
-    let res = new FormData();
-    const resObj: { [key: string]: string } = {};
-    let str;
-    const arr: string[] | globalThis.BodyInit | null | undefined = [];
-
-    let searchResults: VideoURLObj[] = [];
-
-    switch (methodLowerCase) {
-      case "get":
-        searchResults = (await searchFromGET(request, env, ctx))!;
-        searchResults?.forEach((result: VideoURLObj) => {
-          res.append(result.title, result.url);
-          resObj[result.title] = result.url;
-          arr.push(JSON.stringify(result, null, 2));
-        });
-        str = JSON.stringify(searchResults);
-        break;
-      case "post":
-        break;
-      default:
-        break;
-    }
-    const headers = new Headers();
-    headers.append("Content-Type", "application/json");
-    const options: ResponseInit = {
-      headers: headers,
-      status: 200,
-      statusText: "Ok. I think?",
-    };
-
-    const response = new Response(str, options);
+    const response = await processRequest(request, env, ctx);
 
     return response;
   },

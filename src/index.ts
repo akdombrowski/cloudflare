@@ -79,12 +79,26 @@ const processGET = async (
   return response;
 };
 
+const processAI = async (
+  request: WorkerRequest<CfProperties, IncomingRequestCfProperties<CfProperties>>,
+  env: Env,
+  ctx: ExecutionContext,
+) => {
+
+  return new Response();
+};
+
 const processRequest = async (
   request: WorkerRequest<CfProperties, IncomingRequestCfProperties<CfProperties>>,
   env: Env,
   ctx: ExecutionContext,
 ): Promise<Response> => {
   const method = request.method.toLowerCase();
+  const url = new URL(request.url);
+
+  if (url.pathname.endsWith("/ai")) {
+    return await processAI(request, env, ctx);
+  }
 
   switch (method) {
     case "get":

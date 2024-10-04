@@ -1,3 +1,4 @@
+import faitch from "@/ai/index.js";
 import { getAll, getFirst } from "@/vids/videoFuns.js";
 import type { VideoURLObj } from "@/vids/videoURLs.ts";
 import type {
@@ -43,6 +44,10 @@ const checkIfRequestIsForMe = (url: URL) => {
     return true;
   }
 
+  if (url.pathname.endsWith("/ai")) {
+    return true;
+  }
+
   console.log("\nurl path:", url.pathname);
   console.log("not for me. returning early.");
   return false;
@@ -84,7 +89,8 @@ const processAI = async (
   env: Env,
   ctx: ExecutionContext,
 ) => {
-
+  console.log("ai time. let's faitch");
+  const ans = await faitch(request, env, ctx);
   return new Response();
 };
 
@@ -96,7 +102,10 @@ const processRequest = async (
   const method = request.method.toLowerCase();
   const url = new URL(request.url);
 
-  if (url.pathname.endsWith("/ai")) {
+  console.log("url.pathname");
+  console.log(url.pathname);
+
+  if (url.pathname.endsWith("ai")) {
     return await processAI(request, env, ctx);
   }
 

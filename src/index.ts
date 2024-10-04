@@ -9,6 +9,7 @@ import type {
   CfProperties,
 } from "@cloudflare/workers-types";
 
+
 const searchFromGET = async (
   request: WorkerRequest<unknown, IncomingRequestCfProperties<unknown>>,
   env: Env,

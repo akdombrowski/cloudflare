@@ -1487,7 +1487,7 @@ const RAW_RUNTIME_STATE =
           ["estree-walker", "npm:3.0.3"],\
           ["magic-string", "npm:0.30.11"],\
           ["msw", null],\
-          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.5"]\
+          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.8"]\
         ],\
         "packagePeers": [\
           "@types/msw",\
@@ -4650,17 +4650,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["vite", [\
-      ["npm:5.4.5", {\
-        "packageLocation": "../../.yarn/berry/cache/vite-npm-5.4.5-38ef504199-10c0.zip/node_modules/vite/",\
+      ["npm:5.4.8", {\
+        "packageLocation": "../../.yarn/berry/cache/vite-npm-5.4.8-0e6d2e051d-10c0.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "npm:5.4.5"]\
+          ["vite", "npm:5.4.8"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.5", {\
-        "packageLocation": "./.yarn/__virtual__/vite-virtual-31f824e5c1/3/.yarn/berry/cache/vite-npm-5.4.5-38ef504199-10c0.zip/node_modules/vite/",\
+      ["virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.8", {\
+        "packageLocation": "./.yarn/__virtual__/vite-virtual-49d2e4f344/3/.yarn/berry/cache/vite-npm-5.4.8-0e6d2e051d-10c0.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.5"],\
+          ["vite", "virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.8"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
           ["@types/node", null],\
@@ -4700,10 +4700,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.5", {\
-        "packageLocation": "./.yarn/__virtual__/vite-virtual-b7a790935f/3/.yarn/berry/cache/vite-npm-5.4.5-38ef504199-10c0.zip/node_modules/vite/",\
+      ["virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.8", {\
+        "packageLocation": "./.yarn/__virtual__/vite-virtual-3d96984c43/3/.yarn/berry/cache/vite-npm-5.4.8-0e6d2e051d-10c0.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.5"],\
+          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.8"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
           ["@types/node", "npm:22.7.4"],\
@@ -4752,7 +4752,7 @@ const RAW_RUNTIME_STATE =
           ["cac", "npm:6.7.14"],\
           ["debug", "virtual:300a60f261c8a491a689a4365245bde634c336bfb244d0bf15de066c0b93216a7a44780d2b1e53dc37d257977723c316e72f41acbd573255b3e3b11e294a8970#npm:4.3.7"],\
           ["pathe", "npm:1.1.2"],\
-          ["vite", "virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.5"]\
+          ["vite", "virtual:ed03a7aaf4a0407e5bc95e96b20006302c3bef9d0b2da597b0d0023d3b23df044cd2d4225dc5a7a366308da964c370368a5d855a11777bea860a955292beb3b8#npm:5.4.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4796,7 +4796,7 @@ const RAW_RUNTIME_STATE =
           ["tinyexec", "npm:0.3.0"],\
           ["tinypool", "npm:1.0.1"],\
           ["tinyrainbow", "npm:1.2.0"],\
-          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.5"],\
+          ["vite", "virtual:fb11fe275a8123a34336f8b65627ad3135c8ccbe9ba26dc579a54984874a60c527b4a1aea6b8aa507a6922437d2e0779e0749ec4c6fcc07c6405e0293855ee87#npm:5.4.8"],\
           ["vite-node", "npm:2.1.1"],\
           ["why-is-node-running", "npm:2.3.0"]\
         ],\
